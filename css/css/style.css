@@ -1,0 +1,123 @@
+/* Basic reset */
+*{box-sizing:border-box}
+body{font-family:system-ui,Segoe UI,Roboto,Arial; margin:0; background:#fafafa; color:#111}
+
+/* Topbar */
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#fff;border-bottom:1px solid #eee}
+.brand{font-weight:700;font-size:1.1rem}
+.icons{display:flex;gap:10px;align-items:center}
+
+/* Voice button prominent */
+#voiceBtn2{
+  font-size:1.8rem;padding:10px;border-radius:50%;background:linear-gradient(45deg,#ff6b35,#ff914d);color:#fff;border:none;box-shadow:0 6px 18px rgba(0,0,0,0.12);cursor:pointer;transition:transform .15s}
+#voiceBtn2:hover{transform:scale(1.06)}
+#searchBtn2{font-size:1.2rem;padding:8px 12px;border-radius:8px;border:1px solid #ddd;background:#fff;cursor:pointer}
+
+/* container */
+.container{max-width:900px;margin:18px auto;padding:0 16px}
+
+/* categories (index) */
+.category-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin-top:16px}
+.card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid #eee;cursor:pointer;padding:0;display:flex;flex-direction:column;align-items:center}
+.card img{width:100%;height:120px;object-fit:cover}
+.card-text{padding:12px;width:100%;text-align:center;font-weight:600}
+
+/* recipes grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.recipe-card{background:#fff;border-radius:12px;padding:8px;border:1px solid #eee;cursor:pointer;display:flex;gap:10px;align-items:center}
+.recipe-card img{width:90px;height:72px;border-radius:8px;object-fit:cover}
+.rc-text{flex:1}
+.rc-name{font-weight:700}
+.rc-meta{font-size:.9rem;color:#666}
+
+/* search tab on top (recipes page) */
+.search-tab{padding:10px;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,0.03)}
+#topSearchInput{width:94%;padding:10px;border-radius:24px;border:1px solid #ddd;display:block;margin:0 auto}
+
+/* details */
+.large-img{width:100%;max-height:420px;object-fit:cover;border-radius:10px;margin:12px 0}
+.section{margin:12px 0}
+.actions{display:flex;gap:10px;margin-top:10px}
+.btn{padding:8px 12px;border-radius:8px;border:1px solid #ddd;background:#fff;cursor:pointer}
+.primary-btn{background:#ff6b35;color:#fff;border:none}
+.small{padding:6px 8px;font-size:.9rem}
+.danger{background:#ff4d4d;color:#fff;border:none}
+
+/* assistant box */
+.assistant-box{margin-top:14px;padding:12px;border-radius:10px;background:#fff;border:1px solid #eee}
+.hidden{display:none}
+
+/* Modal */
+.modal{position:fixed;left:0;top:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);z-index:999}
+.modal .modal-body{background:#fff;padding:18px;border-radius:10px;max-width:540px;width:92%}
+.modal.hidden{display:none}
+.close{position:absolute;right:16px;top:12px;background:none;border:none;font-size:1.3rem;cursor:pointer}
+
+/* search results */
+.search-results{margin-top:10px;max-height:360px;overflow:auto}
+.result-item, .search-item{padding:10px;border-radius:8px;border:1px solid #f0f0f0;margin-bottom:8px;cursor:pointer;background:#fff}
+.result-item:hover, .search-item:hover{background:#f7f7f7}
+.muted{font-size:.85rem;color:#666;margin-top:6px}
+ 
+.back {
+  cursor: pointer;        /* mouse pointer banega */
+  user-select: none;      /* text select nahi hoga */
+  font-weight: 600;
+}
+
+/* icons container layout */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative; /* so hint can be absolute relative to it */
+}
+
+/* icon buttons */
+.icon-btn {
+  border: none;
+  background: #ff7a59;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* suggestion container positioned to the right of icons */
+.voice-hint-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  min-width: 240px; /* space for suggestion text */
+}
+
+/* single suggestion bubble */
+.voice-hint {
+  font-size: 13px;
+  color: #333;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* hint hover / focus */
+.voice-hint:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* small screen tweak */
+@media (max-width: 600px) {
+  .voice-hint-container { min-width: 160px; }
+  .voice-hint { font-size: 12px; padding: 6px 8px; }
+}
+

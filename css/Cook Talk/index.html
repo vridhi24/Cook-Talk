@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CookTalk — Categories</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="topbar">
+    <div class="brand">CookTalk</div>
+    <div class="icons">
+      <button id="voiceBtn2" class="icon-btn" title="Voice assistant">🎤</button>
+      <button id="searchBtn2" class="icon-btn" title="Smart search">🔎</button>
+      <div id="voiceHintContainer" class="voice-hint-container" aria-hidden="false">
+       <div id="voiceHint" class="voice-hint">Try: "Hey Cooky, search upma"</div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h2 class="page-title">What would you like to cook?</h2>
+
+    <div id="categoryList" class="category-list">
+      <button class="card" data-cat="breakfast">
+        <img src="assets/images/breakfast.jpg" alt="Breakfast">
+        <div class="card-text">Breakfast</div>
+      </button>
+
+      <button class="card" data-cat="lunch">
+        <img src="assets/images/lunch.jpg" alt="Lunch">
+        <div class="card-text">Lunch</div>
+      </button>
+
+      <button class="card" data-cat="dinner">
+        <img src="assets/images/dinner.jpg" alt="Dinner">
+        <div class="card-text">Dinner</div>
+      </button>
+
+      <button class="card" data-cat="snack">
+        <img src="assets/images/snack.jpg" alt="Snack">
+        <div class="card-text">Snack</div>
+      </button>
+
+      <button class="card" data-cat="drink">
+        <img src="assets/images/drink.jpg" alt="Drink">
+        <div class="card-text">Drink</div>
+      </button>
+    </div>
+  </main>
+
+  <!-- SEARCH MODAL -->
+  <div id="searchModal" class="modal hidden">
+    <div class="modal-body">
+      <button id="closeSearch" class="close">&times;</button>
+      <h3>Search recipes or ingredients</h3>
+      <input id="searchInput" placeholder="Type dish or ingredient (e.g. aloo)" />
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+
+  <!-- scripts: recipes (dataset) -> voice -> app (UI glue) -->
+  <script src="js/recipes.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CookTalk — Recipe</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="topbar">
+    <div class="back" onclick="history.back()">← Back</div>
+    <div class="brand">CookTalk</div>
+    <div class="icons">
+      <button id="voiceBtn2" class="icon-btn" title="Voice assistant">🎤</button>
+      <button id="searchBtn2" class="icon-btn" title="Smart search">🔎</button>
+      <div id="voiceHintContainer" class="voice-hint-container" aria-hidden="false">
+       <div id="voiceHint" class="voice-hint">Try: "Hey Cooky, search upma"</div>
+     </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <article id="recipeArticle" class="recipe-detail"></article>
+  </main>
+
+  <!-- SEARCH MODAL -->
+  <div id="searchModal" class="modal hidden">
+    <div class="modal-body">
+      <button id="closeSearch" class="close">&times;</button>
+      <h3>Search recipes or ingredients</h3>
+      <input id="searchInput" placeholder="Type dish or ingredient (e.g. aloo)" />
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+
+  <script src="js/recipes.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    // load recipe id from URL (preferred) or fallback to localStorage
+    const idFromUrl = new URLSearchParams(window.location.search).get("id");
+    const recipeId = idFromUrl || localStorage.getItem('cooktalk_selectedRecipe');
+    const r = RECIPES[recipeId];
+    const article = document.getElementById('recipeArticle');
+
+    if(!r){
+      article.innerHTML = '<p>Recipe not found.</p>';
+    } else {
+      article.innerHTML = `
+        <h2>${r.name}</h2>
+        <img class="large-img" src="${r.image}" alt="${r.name}">
+
+        <section>
+          <h3>Ingredients</h3>
+          <ul class="ingredients">
+            ${r.ingredients.map(i => `<li>${i}</li>`).join('')}
+          </ul>
+        </section>
+
+        <section>
+          <h3>Method</h3>
+          <ol class="steps">
+            ${r.steps.map(s => `<li>${s}</li>`).join('')}
+          </ol>
+        </section>
+
+        <div class="actions">
+          <button id="startBtn" class="btn primary-btn">Start Making</button>
+          <button id="timerBtn" class="btn">Set Timer (voice)</button>
+        </div>
+
+        <div id="assistantBox" class="assistant-box hidden">
+          <div id="assistantStatus">Assistant inactive</div>
+          <div class="assistant-controls">
+            <button id="prevStep" class="btn small">Back</button>
+            <button id="nextStep" class="btn small">Next</button>
+            <button id="repeatStep" class="btn small">Repeat</button>
+            <button id="stopAssistant" class="btn small danger">Stop</button>
+          </div>
+        </div>
+      `;
+    }
+
+    // top nav buttons (safe guards)
+    document.getElementById('searchBtn2')?.addEventListener('click', () => openSearchModal());
+    document.getElementById('voiceBtn2')?.addEventListener('click', () => Voice.toggleListening());
+
+    // start assistant with the correct id
+    document.getElementById('startBtn')?.addEventListener('click', () => {
+      Voice.startAssistantForRecipe(recipeId);
+    });
+
+    // assistant controls
+    document.getElementById('nextStep')?.addEventListener('click', () => Voice.cmd('next'));
+    document.getElementById('prevStep')?.addEventListener('click', () => Voice.cmd('back'));
+    document.getElementById('repeatStep')?.addEventListener('click', () => Voice.cmd('repeat'));
+    document.getElementById('stopAssistant')?.addEventListener('click', () => Voice.cmd('stop'));
+
+    // timer button
+    document.getElementById('timerBtn')?.addEventListener('click', () => {
+      const t = prompt('Set timer (seconds):', '10');
+      const secs = Number(t);
+      if(secs > 0) Voice.setTimer(secs);
+    });
+  </script>
+
+</body>
+</html>
