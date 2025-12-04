@@ -245,14 +245,19 @@ Live link:
 👉 https://vridhi24.github.io/Cook-Talk/
 
 📸 Screenshots (Add yours below)
-/screenshots
-  home.png
-  category.png
-  recipe-details.png
-  voice-assistant.png
 
+## 📸 Screenshots & Demo
 
-Add these to README once you capture them.
+### 🏠 Homepage
+![Homepage](homepage.png)
+
+### 📄 Recipes Page
+![Recipes Page](recipes-page.png)
+
+### 🎤 Voice Assistant Demo  
+(Click to play)
+![Voice Assistant Demo](voice-demo.mp4)
+
 
 🎯 Conclusion
 
