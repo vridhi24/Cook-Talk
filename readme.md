@@ -1,104 +1,146 @@
-🍳 CookTalk - A Voice-Powered Recipe Assistant
+# 🍳 CookTalk - A Voice-Powered Recipe Assistant
 
-CookTalk is a web-based recipe assistant that works through voice commands.
-Users can search recipes, hear ingredients, start step-by-step cooking instructions, set timers, and even navigate recipe categories - without touching the screen.
+CookTalk is a web-based recipe assistant that works through voice commands.  
+Users can search recipes, hear ingredients, start step-by-step cooking instructions, set timers,  
+and even navigate recipe categories without touching the screen.
 
-It feels like talking to a mini cooking assistant named “Cooky” 😄.
+It feels like talking to a mini cooking assistant named **Cooky** 😄.
 
-🚀 Features
-🎤 Full Voice Assistant (Cooky)
+
+
+---
+
+## 🚀 Features
+
+---
+
+### 🎤 Full Voice Assistant (Cooky)
 
 You can say:
 
-“Hey Cooky, search upma”
-
-“Hey Cooky, ingredients for poha”
-
-“Hey Cooky, start Rava Upma”
-
-“Hey Cooky, next”
-
-“Hey Cooky, show snacks”
-
-“Hey Cooky, set timer 1 minute”
+- “Hey Cooky, search upma”  
+- “Hey Cooky, ingredients for poha”  
+- “Hey Cooky, start Rava Upma”  
+- “Hey Cooky, next”  
+- “Hey Cooky, show snacks”  
+- “Hey Cooky, set timer 1 minute”
 
 Cooky listens continuously once activated and responds naturally.
 
-📦 Recipe Categories
 
-Breakfast
 
-Lunch
+---
 
-Dinner
+## 📦 Recipe Categories
 
-Snacks
-
-Drinks
+- Breakfast  
+- Lunch  
+- Dinner  
+- Snacks  
+- Drinks  
 
 Each category loads clean recipe cards with images, time, and servings.
 
-📑 Recipe Details
 
-Every recipe shows:
 
-High-quality image
+---
 
-Ingredients list
+## 📑 Recipe Details
 
-Step-by-step cooking method
+Every recipe page shows:
 
-Start Making (voice-guided cooking)
+- High-quality image  
+- Ingredients list  
+- Step-by-step cooking method  
+- **Start Making** (voice-guided cooking mode)
 
-🔍 Smart Search
+
+
+---
+
+## 🔍 Smart Search
 
 Search works in two places:
 
-Top search bar
+- Top search bar  
+- Search modal  
 
-Search modal
 Supports:
 
-Recipe name
+- Recipe name  
+- Ingredient search  
+- Voice-activated search
 
-Ingredient search
 
-Voice-activated search
 
-🛠️ Tech Stack
+---
 
-HTML5
+## 🛠️ Tech Stack
 
-CSS3
+- HTML5  
+- CSS3  
+- JavaScript (Vanilla)  
+- Web Speech API  
+  - SpeechRecognition  
+  - SpeechSynthesis  
+- LocalStorage  
+- Netlify + GitHub Pages deployment
 
-JavaScript (Vanilla)
 
-Web Speech API
-(SpeechRecognition + SpeechSynthesis)
 
-LocalStorage
+---
 
-Netlify + GitHub Pages deployment
+# 💡 Development Journey - My Real Experience
 
-💡 Development Journey - My Real Experience
-
-This section explains how the project was built and the problems solved along the way.
+This section explains how the project was built and the problems solved along the way.  
 Very important for anyone reviewing the project.
 
-🧩 1. Structuring the Website
 
-Initially, I created the basic 3 pages:
 
-index.html
-recipes.html
-details.html
+---
 
+## 🧩 1. Structuring the Website
+
+I created 3 main pages:
+
+- index.html  
+- recipes.html  
+- details.html  
 
 Then added folders:
 
-/assets/images
-/css
-/js
+- /assets/images  
+- /css  
+- /js  
+
+
+## 🚀 Deployment & Hosting
+
+### 🌐 Live Website  
+The project is deployed on **Netlify** and is fully accessible here:  
+👉 **https://cookeey.netlify.app/**
+
+### 📦 Deployment Method (Manual Upload)
+I deployed the project manually using Netlify’s drag-and-drop method:
+
+1. Created a production build of my project folder  
+2. Compressed it into a `.zip` file  
+3. Uploaded the zip to Netlify under **Add New Site → Deploy manually**  
+4. Netlify auto-extracted the files and generated a live URL  
+5. Updated the website name from dashboard for a cleaner URL  
+
+### 🔄 Future Changes / Updates
+Whenever I update the project:
+
+- I edit code locally  
+- Push updates to GitHub  
+- OR upload updated folder to Netlify again if needed  
+Netlify instantly redeploys the updated version.
+
+### 🔗 GitHub Repository  
+Source code is available here:  
+👉 https://github.com/vridhi24/Cook-Talk
+
 
 Problem I faced:
 
@@ -194,7 +236,7 @@ Now Cooky can open categories instantly.
 
 ❌ Problem 5: Cooky required “Hey Cooky” before every command
 
-I wanted it to feel natural — say "Hey Cooky" once and then continue.
+I wanted it to feel naturally say "Hey Cooky" once and then continue.
 
 ✔ Fix:
 
