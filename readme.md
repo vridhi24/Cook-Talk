@@ -254,9 +254,10 @@ Live link:
 ### 📄 Recipes Page
 ![Recipes Page](recipes-page.png)
 
-### 🎤 Voice Assistant Demo  
-(Click to play)
-![Voice Assistant Demo](voice-demo.mp4)
+## 🎤 Voice Assistant Demo  
+
+[![Watch the Demo](homepage.png)](voice-demo.mp4)
+
 
 
 🎯 Conclusion
