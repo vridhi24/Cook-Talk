@@ -1,7 +1,7 @@
-🍳 CookTalk – A Voice-Powered Recipe Assistant
+🍳 CookTalk - A Voice-Powered Recipe Assistant
 
 CookTalk is a web-based recipe assistant that works through voice commands.
-Users can search recipes, hear ingredients, start step-by-step cooking instructions, set timers, and even navigate recipe categories — without touching the screen.
+Users can search recipes, hear ingredients, start step-by-step cooking instructions, set timers, and even navigate recipe categories - without touching the screen.
 
 It feels like talking to a mini cooking assistant named “Cooky” 😄.
 
@@ -80,7 +80,7 @@ LocalStorage
 
 Netlify + GitHub Pages deployment
 
-💡 Development Journey — My Real Experience
+💡 Development Journey - My Real Experience
 
 This section explains how the project was built and the problems solved along the way.
 Very important for anyone reviewing the project.
